@@ -1,0 +1,30 @@
+.spoiler, .nsfw {
+margin:5px;
+}
+.spoiler span,.nsfw span{
+	color:#EA2E2E;
+	font-weight:bolder;
+	cursor:pointer;
+}
+.spoiler .title,.nsfw .title{
+	color:#aaa;
+	font-style:italic;
+}
+.spoiler .content,.nsfw .content{
+	display:none;
+	border:1px solid #EA2E2E;
+	padding: 10px;
+}
+#reply .spoiler span:hover +div.content,
+#reply .nsfw span:hover +div.content,
+#reply .spoiler span:hover +span+div.content,
+#reply .nsfw span:hover +span+div.content{
+	display:block;
+}
+#reply .spoiler .content:hover,.nsfw .content:hover{
+	display:block;
+}
+/* Mysterious hack for Safari :hover bug */
+.spoiler + div.content *:hover { } 
+.nsfw + div.content *:hover { } 
+

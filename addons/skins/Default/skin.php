@@ -11,12 +11,12 @@ if (!defined("IN_ESOTALK")) exit;
  */
 
 ET::$skinInfo["Default"] = array(
-	"name" => "Default",
-	"description" => "The default esoTalk skin.",
+	"name" => "MCXU",
+	"description" => "The new MCXU skin.",
 	"version" => ESOTALK_VERSION,
-	"author" => "esoTalk Team",
-	"authorEmail" => "support@esotalk.org",
-	"authorURL" => "http://esotalk.org",
+	"author" => "MCXU Team",
+	"authorEmail" => "",
+	"authorURL" => "http://mcxu.com",
 	"license" => "GPLv2"
 );
 
