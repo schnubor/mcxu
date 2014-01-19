@@ -54,7 +54,7 @@ p, ul, pre {line-height:1.6em}
 #userMenu .item-user .avatar {vertical-align:middle; margin:-5px 8px -5px 0}
 #userMenu.menu > li {margin-left:18px; text-align:left}
 
-#hdr .button {background:rgba(0, 0, 0, 0.3); border:1px solid transparent; border-radius:4px; color:#fff; font-size:100%; padding:9px 12px; margin:-7px 0; text-shadow:none}
+#hdr .button {background:rgba(255, 255, 255, 0.1); border:1px solid transparent; border-radius:4px; color:#fff; font-size:100%; padding:9px 12px; margin:-7px 0; text-shadow:none}
 #hdr .button:active {background:rgba(0, 0, 0, 0.5)}
 #hdr .button i {color:#fff}
 
