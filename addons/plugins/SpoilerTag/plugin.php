@@ -3,11 +3,11 @@ if (!defined("IN_ESOTALK")) exit;
  
  ET::$pluginInfo["SpoilerTag"] = array(
 	"name" => "SpoilerTag",
-	"description" => "Enable [spoiler] and [nsfw] tag to hide spoilers",
+	"description" => "Enable [spoiler] tag to hide spoilers",
 	"version" => "1.0.2",
-	"author" => "Ramouch0",
-	"authorEmail" => "me@Ramouch0.org",
-	"authorURL" => "http://Ramouch0.org",
+	"author" => "Ramouch0, Schnubor",
+	"authorEmail" => "me@Ramouch0.org, schnuppser@gmail.com",
+	"authorURL" => "http://Ramouch0.org, http://chko.org",
 	"license" => "GPLv2"
 );
 

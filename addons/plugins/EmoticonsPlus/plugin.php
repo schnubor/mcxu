@@ -110,7 +110,7 @@ public function __construct($rootDirectory)
 public function handler_conversationController_getEditControls($sender, &$controls, $id)
 {
 
-	addToArrayString($controls, "smileys", "<a href='javascript:EmoticonAdv.showDropDown(\"$id\");void(0)' title='".T("Smileys")."' class='emoticon'><span>".T("Smileys")."</span></a>", 0);
+	addToArrayString($controls, "smileys", "<a href='javascript:EmoticonAdv.showDropDown(\"$id\");void(0)' title='".T("Smileys")."' class='emoticon'><span class='icon-smile'></span></a>", 0);
 }
 
 public function handler_conversationController_renderBefore($sender)
