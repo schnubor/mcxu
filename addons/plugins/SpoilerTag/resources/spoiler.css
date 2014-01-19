@@ -2,7 +2,7 @@
 margin:5px;
 }
 .spoiler span,.nsfw span{
-	color:#EA2E2E;
+	color:#DD4223;
 	font-weight:bolder;
 	cursor:pointer;
 }
@@ -12,9 +12,23 @@ margin:5px;
 }
 .spoiler .content,.nsfw .content{
 	display:none;
-	border:1px solid #EA2E2E;
+	border:1px solid #CCC;
 	padding: 10px;
 }
+.formattingButtons .spoiler-editor{
+	display: inline-block;
+	color: #202020;
+	text-decoration: none;
+	font-size: 15px;
+	margin-right: 5px;
+	transition: .2s all;
+	-webkit-transition: .2s all;
+}
+.formattingButtons .spoiler-editor:hover{
+	color: #dd4223;
+	text-decoration: none;
+}
+
 #reply .spoiler span:hover +div.content,
 #reply .nsfw span:hover +div.content,
 #reply .spoiler span:hover +span+div.content,

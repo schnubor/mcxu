@@ -6,3 +6,10 @@ $(document).ready(function() {
 		$(this).siblings(".content").fadeToggle(600);
 	});
 });
+
+var SpoilerEditor = {
+	insertSpoiler : function($id){
+		ETConversation.wrapText($("#"+$id+" textarea"), "[spoiler]", "[/spoiler]");
+
+	}
+};
