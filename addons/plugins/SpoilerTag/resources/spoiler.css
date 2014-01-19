@@ -1,5 +1,5 @@
 .spoiler, .nsfw {
-margin:5px;
+	margin:5px;
 }
 .spoiler span,.nsfw span{
 	color:#DD4223;
@@ -19,8 +19,8 @@ margin:5px;
 	display: inline-block;
 	color: #202020;
 	text-decoration: none;
-	font-size: 15px;
-	margin-right: 5px;
+	font-size: 17px;
+	padding: 0 10px;
 	transition: .2s all;
 	-webkit-transition: .2s all;
 }

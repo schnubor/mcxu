@@ -1,5 +1,7 @@
+.formattingButtons a{ color: #202020; transition: .2s all; text-decoration: none; font-size: 15px; }
+.formattingButtons a:hover{ color: #DD4223; text-decoration: none; }
 [class*=bbcode-] {margin:-6px -2px; display:inline-block}
-[class*=bbcode-] span {text-indent:-999px; width:12px; height:12px; padding:6px; display:inline-block; background-image:url(formattingIcons.png)}
+[class*=bbcode-] span {text-indent: 0; width:12px; height:12px; padding:6px 10px; display:inline-block; background-image: none;}
 .bbcode-b span {background-position:0 0}
 .bbcode-i span {background-position:-24px 0}
 .bbcode-h span {background-position:-48px 0}
