@@ -75,7 +75,7 @@ public function format()
 	$this->links();
 
 	// Format bullet and numbered lists.
-	if (!$this->inline) $this->lists();
+	// if (!$this->inline) $this->lists();
 
 	// Trigger the "format" event, where all regular formatting can be applied (bold, italic, etc.)
 	$this->trigger("format");
@@ -239,11 +239,11 @@ public function linksCallback($matches)
 
 
 /**
- * Convert simple bullet and numbered lists (eg. - list item\n - another list item) into their HTML equivalent.
+ * Convert simple bullet and numbered lists (eg. - list item\n - another list item) into their HTML equivalent. -- NO NEED FOR MCXU!
  *
  * @return ETFormat
  */
-public function lists()
+/*public function lists()
 {
 	// Convert ordered lists - 1. list item\n 2. list item.
 	// We do this by matching against 2 or more lines which begin with a number, passing them together to a
@@ -260,7 +260,7 @@ public function lists()
 	$this->content = preg_replace("/(?:^ *[-*]\s*([^\n]*)(?:\n|$)){2,}/me", "'</p><ul>'.\$unorderedList('$0').'</ul><p>'", $this->content);
 
 	return $this;
-}
+}*/
 
 
 /**
