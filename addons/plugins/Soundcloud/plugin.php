@@ -4,8 +4,8 @@ if (!defined("IN_ESOTALK")) exit;
  ET::$pluginInfo["Soundcloud"] = array(
 	"name" => "Soundcloud",
 	"description" => "Autoembedding Soundcloud Links",
-	"version" => "1.0",
-	"author" => "smoes",
+	"version" => "1.1",
+	"author" => "smoes, schnubor (html5)",
 	"authorEmail" => "smoesorino@gmail.com",
 	"authorURL" => "",
 	"license" => "GPLv2"
@@ -37,12 +37,18 @@ class ETPlugin_Soundcloud extends ETPlugin {
 		$count = 0;
 		if(preg_match_all('/(https?:\/\/soundcloud\.com\/.+)/', $sender->content, $matches)) {
   			foreach($matches[0] as $m) {
-				$arr[] = "<object height='81' width='100%'><param name='movie' value='http://player.soundcloud.com/player.swf?url=$m&amp;g=bb'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='81' src='http://player.soundcloud.com/player.swf?url=$m&amp;g=bb' type='application/x-shockwave-flash' width='100%'></embed></object> <a href='$m'>$m</a>";
+  			
+  				// New HTML5 embed code
+  				$n = str_replace("https://soundcloud.com/", "", $m);
+  				$arr[] = "<iframe width='100%' height='166' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/$n&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true'></iframe><a href='$m'>$m</a>";
+  				
+  				// Old Flash embed code
+				//$arr[] = "<object height='81' width='100%'><param name='movie' value='http://player.soundcloud.com/player.swf?url=$m&amp;g=bb'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='81' src='http://player.soundcloud.com/player.swf?url=$m&amp;g=bb' type='application/x-shockwave-flash' width='100%'></embed></object> <a href='$m'>$m</a>";
 
 				// set dummy constant, since link appears in embedding itself, which leads to infinite recursion
 				$sender->content = str_replace($m, "###".$count, $sender->content);
 				$count++;
-  				}
+  			}
 		}
 		
 		// Now replace dummy constants
