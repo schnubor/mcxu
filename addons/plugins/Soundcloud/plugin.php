@@ -35,12 +35,12 @@ class ETPlugin_Soundcloud extends ETPlugin {
 		// http://blog.soundcloud.com/2009/07/28/soundcloud-player-in-forums-5-step-guide-for-soundcloud-bb-code/
 
 		$count = 0;
-		if(preg_match_all('/(https?:\/\/soundcloud\.com\/.+)/', $sender->content, $matches)) {
+		if(preg_match_all('/(https?:\/\/soundcloud\.com\/[^\[\s]+)/', $sender->content, $matches)) {
   			foreach($matches[0] as $m) {
   			
   				// New HTML5 embed code
   				$n = str_replace("https://soundcloud.com/", "", $m);
-  				$arr[] = "<iframe width='100%' height='166' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/$n&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true'></iframe><a href='$m'>$m</a>";
+  				$arr[] = "<iframe width='100%' height='166' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https://api.soundcloud.com/$n&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true'></iframe><a href='$m'>$m</a>";
   				
   				// Old Flash embed code
 				//$arr[] = "<object height='81' width='100%'><param name='movie' value='http://player.soundcloud.com/player.swf?url=$m&amp;g=bb'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='81' src='http://player.soundcloud.com/player.swf?url=$m&amp;g=bb' type='application/x-shockwave-flash' width='100%'></embed></object> <a href='$m'>$m</a>";
