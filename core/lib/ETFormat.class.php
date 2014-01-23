@@ -221,9 +221,9 @@ public function linksCallback($matches)
 	// then return an embed tag.
 	if (!$this->inline and C("esoTalk.format.youtube") and preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $matches[2], $youtube)) {
 		$id = $youtube[1];
-		$width = 400;
-		$height = 225;
-		return "<div class='video'><object width='$width' height='$height'><param name='movie' value='http://www.youtube.com/v/$id'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param><embed src='http://www.youtube.com/v/$id' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' width='$width' height='$height'></embed></object></div>";
+		$width = 600;
+		$height = 400;
+		return "<div class='video' style='margin: 0 auto; width: $width"."px'><object width='$width' height='$height'><param name='movie' value='http://www.youtube.com/v/$id'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param><embed src='http://www.youtube.com/v/$id' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' width='$width' height='$height'></embed></object></div>";
 	}
 
 	// If this is an internal link...
