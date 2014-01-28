@@ -396,7 +396,7 @@ $definitions["message.channelsHelp"] = "Channels are used to categorize conversa
 $definitions["message.channelSlugTaken"] = "This slug is already in use by another channel.";
 $definitions["message.confirmDelete"] = "Are you sure you want to delete this? Seriously, you won't be able to get it back.";
 $definitions["message.confirmDiscardReply"] = "You have not saved your reply as a draft. Do you wish to discard it?";
-$definitions["message.confirmEmail"] = "Before you can start using your newly-created account, you'll need to confirm your email address. Within the next minute or two you should receive an email from us containing a link to activate your account.";
+$definitions["message.confirmEmail"] = "MCXU is a closed forum. Our administrators are now going to examine your application and will eventually activate your account.";
 $definitions["message.confirmLeave"] = "Woah, you haven't saved the stuff you are editing! If you leave this page, you'll lose any changes you've made. Is this ok?";
 $definitions["message.connectionError"] = "esoTalk could not connect to the MySQL server. The error returned was:<br/>%s";
 $definitions["message.conversationDeleted"] = "The conversation was deleted. Didn't that feel good?";
@@ -488,8 +488,8 @@ $definitions["message.waitToSearch"] = "Woah, slow down! Looks like you're tryin
 
 
 // Emails.
-$definitions["email.confirmEmail.body"] = "<p>Someone (hopefully you!) has signed up to the forum '%1\$s' with this email address.</p><p>If this was you, simply visit the following link and your account will be activated:<br>%2\$s</p>";
-$definitions["email.confirmEmail.subject"] = "%1\$s, please confirm your email address";
+$definitions["email.confirmEmail.body"] = "<p>A new member has registered at the mcxu.com forum. If you want to activate that user, follow this link: <br>%2\$s</p>";
+$definitions["email.confirmEmail.subject"] = "%1\$s, wants to be part of MCXU";
 $definitions["email.footer"] = "<p>(If you don't want to receive any emails like this again, you can <a href='%s'>change your notification preferences</a>.)</p>";
 $definitions["email.forgotPassword.body"] = "<p>Someone (hopefully you!) has submitted a forgotten password request for your account on the forum '%1\$s'. If you do not wish to change your password, just ignore this email and nothing will happen.</p><p>However, if you did forget your password and wish to set a new one, visit the following link:<br>%2\$s</p>";
 $definitions["email.forgotPassword.subject"] = "Did you forget your password, %1\$s?";
