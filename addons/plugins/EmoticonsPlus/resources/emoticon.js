@@ -16,7 +16,10 @@ var EmoticonAdv = {
 	},
 	insertSmiley : function(smiley){
 		ETConversation.insertText($("#"+this.activeTextAreaId+" textarea"), " "+smiley+" ");
-
+		
+	},
+	insertHammer : function(){
+		ETConversation.insertText($("#"+this.activeTextAreaId+" textarea"), ":hammer:");
 	}
 };
 
