@@ -1,6 +1,6 @@
 var SC = {
 	 resolveLink : function(url, e){
-		console.log(e);
+		//console.log(e);
 		$.get(
 		  'http://api.soundcloud.com/resolve.json?url=' + url + '&client_id=12c138ffb184282ce1729781bfb13fb0', 
 		  function (result) {
@@ -10,4 +10,4 @@ var SC = {
 		  }
 		);
 	}
-}
+};
