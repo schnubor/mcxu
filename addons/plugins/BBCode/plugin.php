@@ -97,7 +97,7 @@ public function handler_format_format($sender)
 	// \[ (i|b|color|url|somethingelse) \=? ([^]]+)? \] (?: ([^]]*) \[\/\1\] )
 
 	// Images: [img]url[/img]
-	$replacement = $sender->inline ? "[image]" : "<img src='$1' alt='-image-'/>";
+	$replacement = $sender->inline ? "[image]" : "<a href='$1' target='_blank'><img src='$1' alt='-image-'/></a>";
 	$sender->content = preg_replace("/\[img\](.*?)\[\/img\]/i", $replacement, $sender->content);
 
 	// Links with display text: [url=http://url]text[/url]
