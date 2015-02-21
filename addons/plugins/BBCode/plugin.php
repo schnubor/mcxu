@@ -34,6 +34,8 @@ public function handler_conversationController_renderBefore($sender)
 {
 	$sender->addJSFile($this->getResource("bbcode.js"));
 	$sender->addCSSFile($this->getResource("bbcode.css"));
+	$sender->addJSFile($this->getResource("jquery.gifplayer.js"));
+	$sender->addCSSFile($this->getResource("gifplayer.min.css"));
 }
 
 
@@ -98,7 +100,7 @@ public function handler_format_format($sender)
 
 	// Images: [img]url[/img]
 	$replacement = $sender->inline ? "[image]" : "<a href='$1' target='_blank'><img src='$1' alt='-image-'/></a>";
-	$sender->content = preg_replace("/\[img\](.*?)\[\/img\]/i", $replacement, $sender->content);
+	$sender->content = preg_replace_callback("/\[img\](.*?)\[\/img\]/i", array($this, "imagesCallback"), $sender->content);
 
 	// Links with display text: [url=http://url]text[/url]
 	$sender->content = preg_replace_callback("/\[url=(\w{2,6}:\/\/)?([^\]]*?)\](.*?)\[\/url\]/i", array($this, "linksCallback"), $sender->content);
@@ -135,6 +137,25 @@ public function linksCallback($matches)
 
 	// Otherwise, return an external HTML anchor tag.
 	return "<a href='".$url."' rel='nofollow external' target='_blank' class='link-external'>".$matches[3]." <i class='icon-external-link'></i></a>";
+}
+
+/**
+ * The callback function used to replace IMG BBCode with HTML img tags.
+ *
+ * @param array $matches An array of matches from the regular expression.
+ * @return string The replacement HTML img tag.
+ */
+public function imagesCallback($matches)
+{
+	// If this is an internal link...
+	$url = $matches[1];
+	$ext = pathinfo($url, PATHINFO_EXTENSION);
+	if($ext == 'gif') {
+		return "<img src='/addons/plugins/BBCode/resources/placeholder.png' data-gif='".$url."' class='gifs gifplayer' onload='$(this).gifplayer()'/>";
+	}
+
+	// Otherwise, return an external HTML anchor tag.
+	return "<a href='".$url."' target='_blank' class='normal'><img src='".$url."' alt='-image-'/></a>";
 }
 
 
