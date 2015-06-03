@@ -131,7 +131,7 @@ public function handler_pageEnd(){
 		$alt = htmlentities($k, ENT_QUOTES);
 		$div.="<li><a href=\"javascript:EmoticonAdv.insertSmiley('".str_replace("'","\'",$k)."');void(0)\" title=\"$alt\" style=\"$v\" class=\"emoticon\" alt=\"$alt\">\"$alt\"</a></li>";
 	}
-	$div .="<li><a href=\"javascript:EmoticonAdv.insertHammer();void(0)\"><img src=\"/addons/plugins/EmoticonsPlus/resources/hammer.png\" /></a></li>";
+	$div .="<li><a href=\"javascript:EmoticonAdv.insertHammer();void(0)\"><img src=\"/forum/addons/plugins/EmoticonsPlus/resources/hammer.png\" /></a></li>";
 	$div .="</ul></div></div>";
 	echo $div;
 }
@@ -145,7 +145,7 @@ public function handler_format_format($sender)
 		$to[] = "<span class='emoticon' style='$v'>$k</span>";
 	}
 	$from[] = "/(:hammer:)/";
-	$to[] = "<span><img src=\"/addons/plugins/EmoticonsPlus/resources/hammer.gif\"></span>";
+	$to[] = "<span><img src=\"/forum/addons/plugins/EmoticonsPlus/resources/hammer.gif\"></span>";
 	$sender->content = preg_replace($from, $to, $sender->content);
 }
 

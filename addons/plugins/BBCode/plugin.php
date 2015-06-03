@@ -151,7 +151,7 @@ public function imagesCallback($matches)
 	$url = $matches[1];
 	$ext = pathinfo($url, PATHINFO_EXTENSION);
 	if($ext == 'gif') {
-		return "<img src='/addons/plugins/BBCode/resources/placeholder.png' data-gif='".$url."' class='gifs gifplayer' onload='$(this).gifplayer()'/>";
+		return "<img src='/forum/addons/plugins/BBCode/resources/placeholder.png' data-gif='".$url."' class='gifs gifplayer' onload='$(this).gifplayer()'/>";
 	}
 
 	// Otherwise, return an external HTML anchor tag.
