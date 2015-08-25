@@ -36,7 +36,7 @@ class ETPlugin_Vimeo extends ETPlugin {
 
   		while (preg_match($regexp, $sender->content)) {
                         $sender->content = preg_replace($regexp,
-                                "<div style='width: 600px; margin: 0 auto;'><iframe src='http://player.vimeo.com/video/$1' width='600' height='400' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>", $sender->content);
+                                "<div class='videoWrapper'><iframe src='http://player.vimeo.com/video/$1' width='600' height='400' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>", $sender->content);
 		}
 
 

@@ -1,5 +1,4 @@
 <?php
-require_once 'Services/Soundcloud.php';
 
 if (!defined("IN_ESOTALK")) exit;
  

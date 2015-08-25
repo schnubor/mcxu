@@ -223,7 +223,7 @@ public function linksCallback($matches)
 		$id = $youtube[1];
 		$width = 600;
 		$height = 400;
-		return "<div class='video' style='margin: 0 auto; width: $width"."px'><object width='$width' height='$height'><param name='movie' value='http://www.youtube.com/v/$id'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param><embed src='http://www.youtube.com/v/$id' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' width='$width' height='$height'></embed></object></div>";
+		return "<div class='videoWrapper'><iframe width='".$width."px' height='".$height."px' src='http://www.youtube.com/embed/".$id."?rel=0&hd=1' frameborder='0' allowfullscreen></iframe></div>";
 	}
 
 	// If this is an internal link...
