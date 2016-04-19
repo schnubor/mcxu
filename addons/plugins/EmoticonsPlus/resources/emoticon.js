@@ -25,10 +25,16 @@ var EmoticonAdv = {
 
 //bind mouse out event to automatically close the menu
 $(function(){
-		$("#emoticonDropDown").bind("mouseleave",function(){
-			EmoticonAdv.hideDropDown();
-		});
-		$("#emoticonDropDown *").click(function(event){
-			event.stopPropagation(); //this is needed to prevent the reply area to collapse on click outside it
-		});
+	$("#emoticonDropDown").bind("mouseleave",function(){
+		EmoticonAdv.hideDropDown();
+	});
+		
+	$(".postBody").click(function(event){
+		console.log("lel");
+		EmoticonAdv.hideDropDown();
+	});
+	
+	$("#emoticonDropDown *").click(function(event){
+		event.stopPropagation(); //this is needed to prevent the reply area to collapse on click outside it
+	});
 });

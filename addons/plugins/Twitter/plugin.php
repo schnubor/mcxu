@@ -22,8 +22,9 @@ class ETPlugin_Twitter extends ETPlugin {
 		
 		if(preg_match_all('/(https?:\/\/twitter\.com\/[^\[\s]+)/', $sender->content, $matches)) 		{
   			foreach($matches[0] as $m) {
+	  			$timestamp = uniqid();
   				// New HTML5 embed code
-  				$arr[] = "<div class='autoembed-tweet$count'></div><script>$.ajax({url: 'https://api.twitter.com/1/statuses/oembed.json?url=$m', dataType: 'jsonp', async: false, success: function(data){ $('.autoembed-tweet$count').html(data.html) }});</script>";
+  				$arr[] = "<div class='autoembed-tweet-$timestamp'></div><script>$.ajax({url: 'https://api.twitter.com/1/statuses/oembed.json?url=$m', dataType: 'jsonp', async: false, success: function(data){ $('.autoembed-tweet-$timestamp').html(data.html) }});</script>";
 
 				// set dummy constant, since link appears in embedding itself, which leads to infinite recursion
 				$sender->content = str_replace($m, "###".$count, $sender->content);
