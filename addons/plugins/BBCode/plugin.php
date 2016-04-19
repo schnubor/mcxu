@@ -150,8 +150,14 @@ public function imagesCallback($matches)
 	// If this is an internal link...
 	$url = $matches[1];
 	$ext = pathinfo($url, PATHINFO_EXTENSION);
+	
 	if($ext == 'gif') {
-		return "<img src='/forum/addons/plugins/BBCode/resources/placeholder.png' data-gif='".$url."' class='gifs gifplayer' onload='$(this).gifplayer()'/>";
+		return "<img src='/addons/plugins/BBCode/resources/placeholder.png' data-gif='".$url."' class='gifs gifplayer' onload='$(this).gifplayer()'/>";
+	}
+
+	if($ext == 'gifv') {
+		preg_match('~/\K\w+(?=[^/]*$)~m', $url, $id);
+		return '<video poster="https://i.imgur.com/'.$id[0].'.jpg" preload="auto" autoplay="autoplay" muted="muted" loop="loop" width="100%" height="auto"><source src="https://i.imgur.com/'.$id[0].'.webm" type="video/webm"><source src="https://i.imgur.com/'.$id[0].'.mp4" type="video/mp4"></video>';
 	}
 
 	// Otherwise, return an external HTML anchor tag.
