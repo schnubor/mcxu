@@ -20,6 +20,9 @@ var EmoticonAdv = {
 	},
 	insertHammer : function(){
 		ETConversation.insertText($("#"+this.activeTextAreaId+" textarea"), ":hammer:");
+	},
+	insertGlueck : function(){
+		ETConversation.insertText($("#"+this.activeTextAreaId+" textarea"), ":glueck:");
 	}
 };
 

@@ -132,6 +132,7 @@ public function handler_pageEnd(){
 		$div.="<li><a href=\"javascript:EmoticonAdv.insertSmiley('".str_replace("'","\'",$k)."');void(0)\" title=\"$alt\" style=\"$v\" class=\"emoticon\" alt=\"$alt\">\"$alt\"</a></li>";
 	}
 	$div .="<li><a href=\"javascript:EmoticonAdv.insertHammer();void(0)\"><img src=\"/forum/addons/plugins/EmoticonsPlus/resources/hammer.png\" /></a></li>";
+	$div .="<li><a href=\"javascript:EmoticonAdv.insertGlueck();void(0)\"><img src=\"/forum/addons/plugins/EmoticonsPlus/resources/glueck_small.png\" /></a></li>";
 	$div .="</ul></div></div>";
 	echo $div;
 }
@@ -144,8 +145,12 @@ public function handler_format_format($sender)
 		$from[] = "/(?<=^|[\s.,!<>]){$quoted}(?=[\s.,!<>)]|$)/i";
 		$to[] = "<span class='emoticon' style='$v'>$k</span>";
 	}
+	
 	$from[] = "/(:hammer:)/";
 	$to[] = "<span><img src=\"/forum/addons/plugins/EmoticonsPlus/resources/hammer.gif\"></span>";
+	
+	$from[] = "/(:glueck:)/";
+	$to[] = "<span><img src=\"/forum/addons/plugins/EmoticonsPlus/resources/glueck.png\"></span>";
 	$sender->content = preg_replace($from, $to, $sender->content);
 }
 
